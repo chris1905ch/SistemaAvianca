@@ -26,7 +26,6 @@ namespace AviancaApp.Forms
 
         private void CargarEmpleados()
         {
-            throw new NotImplementedException();
             dgvEmpleados.DataSource = null;
             dgvEmpleados.DataSource = EmpleadoDAL.ObtenerEmpleados();
         }
