@@ -130,6 +130,7 @@
             this.Controls.Add(this.txtNumero);
             this.Name = "Vuelos";
             this.Text = "Vuelos";
+            this.Load += new System.EventHandler(this.Vuelos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

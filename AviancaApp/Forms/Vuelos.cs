@@ -39,6 +39,11 @@ namespace AviancaApp.Forms
             VueloDAL.AgregarVuelo(v);
             CargarVuelos();
         }
+
+        private void Vuelos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
