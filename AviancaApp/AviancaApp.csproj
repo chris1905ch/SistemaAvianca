@@ -46,11 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\AvionDAL.cs" />
     <Compile Include="DAL\CheckInDAL.cs" />
     <Compile Include="DAL\ClienteDAL.cs" />
     <Compile Include="DAL\Conexion.cs" />
+    <Compile Include="DAL\EmpleadoDAL.cs" />
     <Compile Include="DAL\EquipajeDAL.cs" />
     <Compile Include="DAL\ReservaDAL.cs" />
+    <Compile Include="DAL\RutaDAL.cs" />
+    <Compile Include="DAL\TripulacionDAL.cs" />
     <Compile Include="DAL\TarifaDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="DAL\VueloDAL.cs" />
@@ -59,6 +63,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAviones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAviones.Designer.cs">
+      <DependentUpon>FormAviones.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormCheckIn.cs">
       <SubType>Form</SubType>
@@ -71,6 +81,12 @@
     </Compile>
     <Compile Include="Forms\FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEmpleados.Designer.cs">
+      <DependentUpon>FormEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormEquipaje.cs">
       <SubType>Form</SubType>
@@ -96,26 +112,48 @@
     <Compile Include="Forms\FormReservas.Designer.cs">
       <DependentUpon>FormReservas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRuta.Designer.cs">
+      <DependentUpon>FormRuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTripulacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTripulacion.Designer.cs">
+      <DependentUpon>FormTripulacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Vuelos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Vuelos.Designer.cs">
       <DependentUpon>Vuelos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Avion.cs" />
     <Compile Include="Models\CheckIn.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\Equipaje.cs" />
     <Compile Include="Models\Reserva.cs" />
+    <Compile Include="Models\Ruta.cs" />
+    <Compile Include="Models\Tripulacion.cs" />
     <Compile Include="Models\Tarifa.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Vuelo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormAviones.resx">
+      <DependentUpon>FormAviones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCheckIn.resx">
       <DependentUpon>FormCheckIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEmpleados.resx">
+      <DependentUpon>FormEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEquipaje.resx">
       <DependentUpon>FormEquipaje.cs</DependentUpon>
@@ -129,6 +167,12 @@
     <EmbeddedResource Include="Forms\FormReservas.resx">
       <DependentUpon>FormReservas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRuta.resx">
+      <DependentUpon>FormRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTripulacion.resx">
+      <DependentUpon>FormTripulacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Vuelos.resx">
       <DependentUpon>Vuelos.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +184,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -154,6 +199,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\7_Avianca_logo_959_487_cy_90.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2025-07-29 at 10.38.54 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_Avianca_logo_959_487_cy_90-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -240,6 +240,7 @@
             this.Controls.Add(this.txtNumeroVuelo);
             this.Name = "FormVuelos";
             this.Text = "Vuelos";
+            this.Load += new System.EventHandler(this.Vuelos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

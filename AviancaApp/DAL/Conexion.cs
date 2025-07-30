@@ -10,7 +10,7 @@ public class Conexion
 {
     public static SqlConnection ObtenerConexion()
     {
-        string cadena = "Server=CHRIS1405\\SQLEXPRESS02;Database=AviancaDB;Trusted_Connection=True;";
+        string cadena = "Server=HPDEJEF\\SQLEXPRESS;Database=AviancaDB;Trusted_Connection=True;";
         return new SqlConnection(cadena);
     }
 }

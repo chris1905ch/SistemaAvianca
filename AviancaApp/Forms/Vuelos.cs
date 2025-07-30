@@ -123,6 +123,11 @@ namespace AviancaApp.Forms
                 MessageBox.Show("Selecciona un vuelo para eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void Vuelos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
