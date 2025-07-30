@@ -116,11 +116,11 @@
     <Compile Include="Forms\FormTripulacion.Designer.cs">
       <DependentUpon>FormTripulacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Vuelos.cs">
+    <Compile Include="Forms\FormVuelos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Vuelos.Designer.cs">
-      <DependentUpon>Vuelos.cs</DependentUpon>
+    <Compile Include="Forms\FormVuelos.Designer.cs">
+      <DependentUpon>FormVuelos.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Avion.cs" />
     <Compile Include="Models\CheckIn.cs" />
@@ -160,8 +160,8 @@
     <EmbeddedResource Include="Forms\FormTripulacion.resx">
       <DependentUpon>FormTripulacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Vuelos.resx">
-      <DependentUpon>Vuelos.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormVuelos.resx">
+      <DependentUpon>FormVuelos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

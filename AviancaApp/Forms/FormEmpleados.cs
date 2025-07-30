@@ -14,10 +14,6 @@ namespace AviancaApp.Forms
 {
     public partial class FormEmpleados : Form
     {
-        private void LimpiarCampos()
-        {
-            throw new NotImplementedException();
-        }
         public FormEmpleados()
         {
             InitializeComponent();
@@ -26,6 +22,7 @@ namespace AviancaApp.Forms
 
         private void CargarEmpleados()
         {
+           
             dgvEmpleados.DataSource = null;
             dgvEmpleados.DataSource = EmpleadoDAL.ObtenerEmpleados();
         }
@@ -78,6 +75,12 @@ namespace AviancaApp.Forms
                 txtApellidos.Text = emp.Apellidos;
                 txtRol.Text = emp.Rol;
             }
+        }
+        private void LimpiarCampos()
+        {
+            txtNombres.Clear();
+            txtApellidos.Clear();
+            txtRol.Clear();
         }
     }
 }

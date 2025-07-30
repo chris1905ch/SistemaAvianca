@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AviancaApp.Forms
 {
-    public partial class Vuelos : Form
+    public partial class FormVuelos : Form
     {
         private void FormVuelos_Load(object sender, EventArgs e)
         {

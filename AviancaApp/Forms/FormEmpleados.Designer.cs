@@ -186,7 +186,7 @@ namespace AviancaApp.Forms
 
         private void FormEmpleados_Load(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         #endregion

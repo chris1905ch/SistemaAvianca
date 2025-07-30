@@ -47,7 +47,7 @@ namespace AviancaApp.Forms
         private void btnVuelos_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Aquí se abrirá la gestión de Vuelos");
-            Vuelos f = new Vuelos();
+            FormVuelos f = new FormVuelos();
             f.ShowDialog();
         }
 

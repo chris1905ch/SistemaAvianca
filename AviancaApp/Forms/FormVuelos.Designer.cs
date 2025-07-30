@@ -1,6 +1,6 @@
 ﻿namespace AviancaApp.Forms
 {
-    partial class Vuelos
+    partial class FormVuelos
     {
         /// <summary>
         /// Required designer variable.
