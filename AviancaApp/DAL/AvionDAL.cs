@@ -1,11 +1,12 @@
 ﻿using AviancaApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
+using System.Windows.Forms;
 
 namespace AviancaApp.DAL
 {
@@ -29,7 +30,7 @@ namespace AviancaApp.DAL
                     {
                         AvionID = (int)reader["AvionID"],
                         Modelo = reader["Modelo"].ToString(),
-                        Capacidad = (int)reader["Capacidad"],
+                        Capacidad = (int)reader["CapacidadPasajeros"],
                         Matricula = reader["Matricula"].ToString(),
                         Estado = reader["Estado"].ToString()
                     };
@@ -42,16 +43,23 @@ namespace AviancaApp.DAL
 
         public static void Insertar(Avion avion)
         {
+            if(avion == null)
+            {
+                MessageBox.Show("El objeto avión está vacío.");
+                return;
+            }
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                conn.Open();
-                string sql = "INSERT INTO Aviones (Modelo, Capacidad, Matricula, Estado) VALUES (@Modelo, @Capacidad, @Matricula, @Estado)";
+                string sql = "INSERT INTO Aviones (Modelo, CapacidadPasajeros, Matricula, Estado) VALUES (@Modelo, @Capacidad, @Matricula, @Estado)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@Modelo", avion.Modelo);
                 cmd.Parameters.AddWithValue("@Capacidad", avion.Capacidad);
                 cmd.Parameters.AddWithValue("@Matricula", avion.Matricula);
                 cmd.Parameters.AddWithValue("@Estado", avion.Estado);
+
+                conn.Open();
                 cmd.ExecuteNonQuery();
+
             }
         }
 
@@ -60,7 +68,7 @@ namespace AviancaApp.DAL
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string sql = "UPDATE Aviones SET Modelo = @Modelo, Capacidad = @Capacidad, Matricula = @Matricula, Estado = @Estado WHERE AvionID = @AvionID";
+                string sql = "UPDATE Aviones SET Modelo = @Modelo, CapacidadPasajeros = @Capacidad, Matricula = @Matricula, Estado = @Estado WHERE AvionID = @AvionID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@Modelo", avion.Modelo);
                 cmd.Parameters.AddWithValue("@Capacidad", avion.Capacidad);
@@ -81,6 +89,11 @@ namespace AviancaApp.DAL
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        internal static object ObtenerAviones()
+        {
+            throw new NotImplementedException();
         }
     }
 }

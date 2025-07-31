@@ -12,4 +12,5 @@ public class Reserva
     public int TarifaID { get; set; }
     public DateTime FechaReserva { get; set; }
     public string EstadoReserva { get; set; }
+    public string NombrePasajero { get; set; }
 }

@@ -38,22 +38,28 @@ namespace AviancaApp
             txtDocumento.Clear();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void txtDocumento_TextChanged(object sender, EventArgs e)
         {
-            Cliente c = new Cliente
-            {
-                Nombres = txtNombres.Text,
-                Apellidos = txtApellidos.Text,
-                Email = txtEmail.Text,
-                NumeroDocumento = txtDocumento.Text
-            };
 
-            ClienteDAL.AgregarCliente(c);
-            CargarClientes();
-            LimpiarCampos();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void lblApellidos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            if (dgvClientes.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(dgvClientes.CurrentRow.Cells["ClienteID"].Value);
+                ClienteDAL.EliminarCliente(id);
+                CargarClientes();
+                LimpiarCampos();
+            }
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
         {
             if (dgvClientes.SelectedRows.Count > 0)
             {
@@ -72,18 +78,22 @@ namespace AviancaApp
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            if (dgvClientes.SelectedRows.Count > 0)
+            Cliente c = new Cliente
             {
-                int id = Convert.ToInt32(dgvClientes.CurrentRow.Cells["ClienteID"].Value);
-                ClienteDAL.EliminarCliente(id);
-                CargarClientes();
-                LimpiarCampos();
-            }
+                Nombres = txtNombres.Text,
+                Apellidos = txtApellidos.Text,
+                Email = txtEmail.Text,
+                NumeroDocumento = txtDocumento.Text
+            };
+
+            ClienteDAL.AgregarCliente(c);
+            CargarClientes();
+            LimpiarCampos();
         }
 
-        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -92,6 +102,7 @@ namespace AviancaApp
                 txtEmail.Text = dgvClientes.CurrentRow.Cells["Email"].Value.ToString();
                 txtDocumento.Text = dgvClientes.CurrentRow.Cells["NumeroDocumento"].Value.ToString();
             }
+
         }
     }
 }

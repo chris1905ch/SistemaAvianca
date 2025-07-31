@@ -74,15 +74,11 @@ namespace AviancaApp.DAL
             }
         }
 
-        internal static object ObtenerRutas()
+        internal static List<Ruta> ObtenerRutas()
         {
-            throw new NotImplementedException();
+            return ObtenerTodas();
         }
-
-        internal static void Agregar(Ruta r)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
 

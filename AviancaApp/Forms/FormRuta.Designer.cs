@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             this.dgvRutas = new System.Windows.Forms.DataGridView();
-            this.txtOrigen = new System.Windows.Forms.TextBox();
-            this.txtDestino = new System.Windows.Forms.TextBox();
             this.txtDuracion = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.lblOrigen = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblDuracion = new System.Windows.Forms.Label();
+            this.lblDestino = new System.Windows.Forms.Label();
+            this.cmbOrigen = new System.Windows.Forms.ComboBox();
+            this.cmbDestino = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRutas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,20 +53,6 @@
             this.dgvRutas.Size = new System.Drawing.Size(647, 411);
             this.dgvRutas.TabIndex = 0;
             this.dgvRutas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRutas_CellContentClick);
-            // 
-            // txtOrigen
-            // 
-            this.txtOrigen.Location = new System.Drawing.Point(690, 164);
-            this.txtOrigen.Name = "txtOrigen";
-            this.txtOrigen.Size = new System.Drawing.Size(433, 22);
-            this.txtOrigen.TabIndex = 1;
-            // 
-            // txtDestino
-            // 
-            this.txtDestino.Location = new System.Drawing.Point(690, 253);
-            this.txtDestino.Name = "txtDestino";
-            this.txtDestino.Size = new System.Drawing.Size(433, 22);
-            this.txtDestino.TabIndex = 2;
             // 
             // txtDuracion
             // 
@@ -110,18 +100,73 @@
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
+            // lblOrigen
+            // 
+            this.lblOrigen.AutoSize = true;
+            this.lblOrigen.Location = new System.Drawing.Point(761, 129);
+            this.lblOrigen.Name = "lblOrigen";
+            this.lblOrigen.Size = new System.Drawing.Size(47, 16);
+            this.lblOrigen.TabIndex = 8;
+            this.lblOrigen.Text = "Origen";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(808, 224);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 16);
+            this.label2.TabIndex = 9;
+            // 
+            // lblDuracion
+            // 
+            this.lblDuracion.AutoSize = true;
+            this.lblDuracion.Location = new System.Drawing.Point(761, 308);
+            this.lblDuracion.Name = "lblDuracion";
+            this.lblDuracion.Size = new System.Drawing.Size(61, 16);
+            this.lblDuracion.TabIndex = 10;
+            this.lblDuracion.Text = "Duracion";
+            // 
+            // lblDestino
+            // 
+            this.lblDestino.AutoSize = true;
+            this.lblDestino.Location = new System.Drawing.Point(761, 224);
+            this.lblDestino.Name = "lblDestino";
+            this.lblDestino.Size = new System.Drawing.Size(53, 16);
+            this.lblDestino.TabIndex = 11;
+            this.lblDestino.Text = "Destino";
+            // 
+            // cmbOrigen
+            // 
+            this.cmbOrigen.FormattingEnabled = true;
+            this.cmbOrigen.Location = new System.Drawing.Point(735, 163);
+            this.cmbOrigen.Name = "cmbOrigen";
+            this.cmbOrigen.Size = new System.Drawing.Size(121, 24);
+            this.cmbOrigen.TabIndex = 12;
+            // 
+            // cmbDestino
+            // 
+            this.cmbDestino.FormattingEnabled = true;
+            this.cmbDestino.Location = new System.Drawing.Point(749, 261);
+            this.cmbDestino.Name = "cmbDestino";
+            this.cmbDestino.Size = new System.Drawing.Size(121, 24);
+            this.cmbDestino.TabIndex = 13;
+            // 
             // FormRuta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1155, 599);
+            this.Controls.Add(this.cmbDestino);
+            this.Controls.Add(this.cmbOrigen);
+            this.Controls.Add(this.lblDestino);
+            this.Controls.Add(this.lblDuracion);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblOrigen);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtDuracion);
-            this.Controls.Add(this.txtDestino);
-            this.Controls.Add(this.txtOrigen);
             this.Controls.Add(this.dgvRutas);
             this.Name = "FormRuta";
             this.Text = "FormRuta";
@@ -135,12 +180,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvRutas;
-        private System.Windows.Forms.TextBox txtOrigen;
-        private System.Windows.Forms.TextBox txtDestino;
         private System.Windows.Forms.TextBox txtDuracion;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Label lblOrigen;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDuracion;
+        private System.Windows.Forms.Label lblDestino;
+        private System.Windows.Forms.ComboBox cmbOrigen;
+        private System.Windows.Forms.ComboBox cmbDestino;
     }
 }

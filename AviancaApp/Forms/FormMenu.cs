@@ -28,42 +28,37 @@ namespace AviancaApp.Forms
 
         private void btnAeropuertos_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Aquí se abrirá la gestión de Aeropuertos");
-
+            FormAeropuerto frm = new FormAeropuerto();
+            frm.ShowDialog();
         }
-
-        private void btnAviones_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Aquí se abrirá la gestión de Aviones");
-        }
-
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Aquí se abrirá la gestión de Clientes");
             FormClientes f = new FormClientes();
             f.ShowDialog();
         }
 
         private void btnVuelos_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Aquí se abrirá la gestión de Vuelos");
             FormVuelos f = new FormVuelos();
             f.ShowDialog();
         }
 
         private void btnReservas_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Aquí se abrirá la gestión de Reservas");
+            FormReservas frm = new FormReservas();
+            frm.ShowDialog();
         }
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Aquí se abrirá la gestión de Check-in");
+            FormCheckIn frm = new FormCheckIn();
+            frm.ShowDialog();
         }
         
         private void btnEquipaje_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Aquí se abrirá la gestión de Equipaje");
+            FormEquipaje frm = new FormEquipaje();
+            frm.ShowDialog();
         }
 
         private void btnCerrarSesion_Click_2(object sender, EventArgs e)
@@ -88,6 +83,12 @@ namespace AviancaApp.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             FormAviones frm = new FormAviones();
+            frm.ShowDialog();
+        }
+
+        private void btnTarifas_Click(object sender, EventArgs e)
+        {
+            FormTarifas frm = new FormTarifas();
             frm.ShowDialog();
         }
     }

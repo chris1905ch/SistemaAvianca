@@ -21,27 +21,47 @@ namespace AviancaApp.Forms
         }
 
         private int rutaIdSeleccionada = -1;
+
         private void FormRuta_Load(object sender, EventArgs e)
         {
+            var aeropuertos = AeropuertoDAL.Obtener();
+
+            cmbOrigen.DataSource = aeropuertos;
+            cmbOrigen.DisplayMember = "Nombre";
+            cmbOrigen.ValueMember = "AeropuertoID";
+
+            cmbDestino.DataSource = new List<Aeropuerto>(aeropuertos); // Copia independiente
+            cmbDestino.DisplayMember = "Nombre";
+            cmbDestino.ValueMember = "AeropuertoID";
+
             CargarRutas();
         }
 
         private void CargarRutas()
         {
-            var rutas = RutaDAL.ObtenerTodas(); 
-            dgvRutas.DataSource = rutas;        
+            var rutas = RutaDAL.ObtenerTodas();
+            dgvRutas.DataSource = null;
+            dgvRutas.DataSource = rutas;
+            // Opcional: Ocultar columnas si quieres
+            // dgvRutas.Columns["AeropuertoOrigenID"].Visible = false;
+            // dgvRutas.Columns["AeropuertoDestinoID"].Visible = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (cmbOrigen.SelectedIndex == -1 || cmbDestino.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecciona el aeropuerto de origen y destino.");
+                return;
+            }
+
             Ruta r = new Ruta
             {
-                Origen = txtOrigen.Text,
-                Destino = txtDestino.Text,
-                Duracion = txtDuracion.Text
+                AeropuertoOrigenID = (int)cmbOrigen.SelectedValue,
+                AeropuertoDestinoID = (int)cmbDestino.SelectedValue
             };
 
-            RutaDAL.Agregar(r);
+            RutaDAL.Insertar(r);
             CargarRutas();
             Limpiar();
         }
@@ -54,12 +74,17 @@ namespace AviancaApp.Forms
                 return;
             }
 
+            if (cmbOrigen.SelectedIndex == -1 || cmbDestino.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecciona el aeropuerto de origen y destino.");
+                return;
+            }
+
             Ruta r = new Ruta
             {
                 RutaID = rutaIdSeleccionada,
-                Origen = txtOrigen.Text,
-                Destino = txtDestino.Text,
-                Duracion = txtDuracion.Text
+                AeropuertoOrigenID = (int)cmbOrigen.SelectedValue,
+                AeropuertoDestinoID = (int)cmbDestino.SelectedValue
             };
 
             RutaDAL.Actualizar(r);
@@ -86,17 +111,17 @@ namespace AviancaApp.Forms
             {
                 DataGridViewRow fila = dgvRutas.Rows[e.RowIndex];
                 rutaIdSeleccionada = Convert.ToInt32(fila.Cells["RutaID"].Value);
-                txtOrigen.Text = fila.Cells["Origen"].Value.ToString();
-                txtDestino.Text = fila.Cells["Destino"].Value.ToString();
-                txtDuracion.Text = fila.Cells["Duracion"].Value.ToString();
+
+                // Asignar los valores de origen y destino en los combo boxes
+                cmbOrigen.SelectedValue = Convert.ToInt32(fila.Cells["AeropuertoOrigenID"].Value);
+                cmbDestino.SelectedValue = Convert.ToInt32(fila.Cells["AeropuertoDestinoID"].Value);
             }
         }
+
         private void Limpiar()
         {
-            throw new NotImplementedException();
-            txtOrigen.Clear();
-            txtDestino.Clear();
-            txtDuracion.Clear();
+            cmbOrigen.SelectedIndex = -1;
+            cmbDestino.SelectedIndex = -1;
             rutaIdSeleccionada = -1;
         }
     }

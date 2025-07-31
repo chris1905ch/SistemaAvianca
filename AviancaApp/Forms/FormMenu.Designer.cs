@@ -32,7 +32,6 @@ namespace AviancaApp.Forms
         {
             this.lblBienvenida = new System.Windows.Forms.Label();
             this.btnAeropuertos = new System.Windows.Forms.Button();
-            this.btnAviones = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnVuelos = new System.Windows.Forms.Button();
             this.btnReservas = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@ namespace AviancaApp.Forms
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnTarifas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,18 +69,6 @@ namespace AviancaApp.Forms
             this.btnAeropuertos.Text = "Aeropuertos";
             this.btnAeropuertos.UseVisualStyleBackColor = true;
             this.btnAeropuertos.Click += new System.EventHandler(this.btnAeropuertos_Click);
-            // 
-            // btnAviones
-            // 
-            this.btnAviones.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAviones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnAviones.Location = new System.Drawing.Point(329, 168);
-            this.btnAviones.Name = "btnAviones";
-            this.btnAviones.Size = new System.Drawing.Size(110, 48);
-            this.btnAviones.TabIndex = 4;
-            this.btnAviones.Text = "Aviones";
-            this.btnAviones.UseVisualStyleBackColor = true;
-            this.btnAviones.Click += new System.EventHandler(this.btnAviones_Click);
             // 
             // btnClientes
             // 
@@ -183,7 +171,7 @@ namespace AviancaApp.Forms
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(140, 426);
+            this.button1.Location = new System.Drawing.Point(323, 168);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 48);
             this.button1.TabIndex = 14;
@@ -203,6 +191,18 @@ namespace AviancaApp.Forms
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // btnTarifas
+            // 
+            this.btnTarifas.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTarifas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTarifas.Location = new System.Drawing.Point(140, 428);
+            this.btnTarifas.Name = "btnTarifas";
+            this.btnTarifas.Size = new System.Drawing.Size(113, 46);
+            this.btnTarifas.TabIndex = 16;
+            this.btnTarifas.Text = "Tarifas";
+            this.btnTarifas.UseVisualStyleBackColor = true;
+            this.btnTarifas.Click += new System.EventHandler(this.btnTarifas_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,6 +210,7 @@ namespace AviancaApp.Forms
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(910, 563);
+            this.Controls.Add(this.btnTarifas);
             this.Controls.Add(this.lblBienvenida);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
@@ -221,7 +222,6 @@ namespace AviancaApp.Forms
             this.Controls.Add(this.btnReservas);
             this.Controls.Add(this.btnVuelos);
             this.Controls.Add(this.btnClientes);
-            this.Controls.Add(this.btnAviones);
             this.Controls.Add(this.btnAeropuertos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormMenu";
@@ -237,7 +237,6 @@ namespace AviancaApp.Forms
         #endregion
         private System.Windows.Forms.Label lblBienvenida;
         private System.Windows.Forms.Button btnAeropuertos;
-        private System.Windows.Forms.Button btnAviones;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnVuelos;
         private System.Windows.Forms.Button btnReservas;
@@ -249,5 +248,6 @@ namespace AviancaApp.Forms
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnTarifas;
     }
 }
